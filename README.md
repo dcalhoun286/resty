@@ -6,7 +6,7 @@ This is an application built with React. The user can enter a URL (API) they wis
 
 ## Links
 
-- [PR - Phase 1](https://github.com/dcalhoun286/resty/pull/1)
+- [Pull Request - Phase 1](https://github.com/dcalhoun286/resty/pull/1)
 
 ## RESTy - Phase 1 Requirements
 
