@@ -25,10 +25,15 @@ And as developers, here are the high level development tasks that address the ab
 - Create buttons that let the user choose from the REST methods (`GET`, `POST`, `PUT`, `DELETE`)
 - When the form is filled out, and the button is clicked, display the URL and the method chosen
 
-## Resources
+## UML
 
-UML - created with [diagrams.net](https://www.diagrams.net/)
+created with [diagrams.net](https://www.diagrams.net/)
+
 ![RESTy UML](assets/resty-uml.png)
+
+## Resources and Collaborators
+
+- [W3schools - HTML Forms](https://www.w3schools.com/html/html_forms.asp)
 
 ## Getting Started with Create React App
 
