@@ -35,6 +35,8 @@ created with [diagrams.net](https://www.diagrams.net/)
 ## Resources and Collaborators
 
 - [W3schools - HTML Forms](https://www.w3schools.com/html/html_forms.asp)
+- [ReactJS.org - Forms](https://reactjs.org/docs/forms.html)
+- [Jay Beale](https://github.com/jaybeale) helped me get started on wiring up the event handlers and using the `state` object
 
 ## Getting Started with Create React App
 
