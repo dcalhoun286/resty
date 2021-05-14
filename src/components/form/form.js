@@ -44,13 +44,15 @@ class Form extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
+    console.log(this.state);
     // on click
     // this will make the web request
   }
 
   render() {
     return (
-      <form>
+      <form action={this.state.url} method={this.state.reqMethod}>
         <input type="text" placeholder="Type your API URL here" value={this.state.url} onChange={this.handleChangeURL}></input>
         <label>
           GET:
