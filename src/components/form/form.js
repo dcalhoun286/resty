@@ -13,10 +13,9 @@ class Form extends React.Component {
       // properties here are the default state of the app and what will change based on user input
 
       url: '',
-      // post: false,
-      // put: false,
-      // get: false,
-      // delete: false
+
+      reqMethod: ''
+
     };
 
     // set up a handler for changes to form fields and a handler for the submit button
@@ -24,14 +23,17 @@ class Form extends React.Component {
     // this.method = this.method.bind(this)
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
-    // this.handleChangeReq = this.handleChangeReq.bind(this);
+    this.handleChangeReqMethod = this.handleChangeReqMethod.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }; 
+  };
 
-  // handleChangeReq(event) {
-  //   // on click
-  //   // update the state with the web request that the user selected
-  // }
+  handleChangeReqMethod(event) {
+    event.preventDefault();
+    console.log('req method changed to: ', event.target.value);
+    this.setState({reqMethod: event.target.value});
+    // on click
+    // update the state with the web request that the user selected
+  }
 
   handleChangeURL(event) {
     event.preventDefault();
@@ -52,20 +54,19 @@ class Form extends React.Component {
         <input type="text" placeholder="Type your API URL here" value={this.state.url} onChange={this.handleChangeURL}></input>
         <label>
           GET:
-          <input type="radio" id="get" name="req" value="GET"></input>
+          <input type="radio" id="get" name="req" value="GET" onClick={this.handleChangeReqMethod}></input>
         </label>
         <label>
           POST:
-          <input type="radio" id="post" name="req" value="POST"></input>
+          <input type="radio" id="post" name="req" value="POST" onClick={this.handleChangeReqMethod}></input>
         </label>
         <label>
           PUT:
-          <input type="radio" id="put" name="req" value="PUT"></input>
+          <input type="radio" id="put" name="req" value="PUT" onClick={this.handleChangeReqMethod}></input>
         </label>
-  
         <label>
           DELETE:
-          <input type="radio" id="delete" name="req" value="DELETE"></input>
+          <input type="radio" id="delete" name="req" value="DELETE" onClick={this.handleChangeReqMethod}></input>
         </label>
   
         <input type="submit" value="GO!"></input>
