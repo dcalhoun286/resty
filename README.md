@@ -35,8 +35,10 @@ created with [diagrams.net](https://www.diagrams.net/)
 ## Resources and Collaborators
 
 - [W3schools - HTML Forms](https://www.w3schools.com/html/html_forms.asp)
+  - [W3schools - Form Attributes](https://www.w3schools.com/tags/tag_input.asp)
 - [ReactJS.org - Forms](https://reactjs.org/docs/forms.html)
 - [Jay Beale](https://github.com/jaybeale) helped me get started on wiring up the event handlers and using the `state` object
+- [Stack Overflow: Placeholder for dropdown selection](https://stackoverflow.com/questions/44786669/warning-use-the-defaultvalue-or-value-props-on-select-instead-of-setting)
 
 ## Getting Started with Create React App
 
