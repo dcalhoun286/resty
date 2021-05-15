@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import './form.scss';
 
 class Form extends React.Component {
@@ -41,7 +42,7 @@ class Form extends React.Component {
   }
 
   // event handler for onSubmit event listener
-  handleSubmit(event) {
+  async handleSubmit(event) {
 
     event.preventDefault();
 
@@ -49,6 +50,11 @@ class Form extends React.Component {
       url: this.state.url,
       req: this.state.req
     };
+
+    let results = await axios.get(data.url);
+    let resultsData = results.data;
+
+    console.log(resultsData);
 
     this.setState({results: [...this.state.results, data] })
   }
