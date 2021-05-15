@@ -9,66 +9,72 @@ class Form extends React.Component {
     super(props);
 
     this.state = {
-      
-      // properties here are the default state of the app and what will change based on user input
 
       url: '',
 
-      reqMethod: ''
+      req: '',
 
+      results: null,
     };
-
-    // set up a handler for changes to form fields and a handler for the submit button
-    // each property in state needs its own event handler
-    // this.method = this.method.bind(this)
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
     this.handleChangeReqMethod = this.handleChangeReqMethod.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   };
 
-  handleChangeReqMethod(event) {
-    event.preventDefault();
-    console.log('req method changed to: ', event.target.value);
-    this.setState({reqMethod: event.target.value});
-    // on click
-    // update the state with the web request that the user selected
-  }
-
+  // event handler for onChange event listener
   handleChangeURL(event) {
+
     event.preventDefault();
     console.log('URL event target value is ', event.target.value);
-    this.setState({url: event.target.value});
-    // on change
-    // update the state with the API the user entered
+    this.setState({...this.state, url: event.target.value});
+
   }
 
-  handleSubmit(event) {
+  // event handler for onClick event listener
+  handleChangeReqMethod(event) {
+
     event.preventDefault();
-    console.log(this.state);
-    // on click
-    // this will make the web request
+    console.log('req method changed to: ', event.target.value);
+    this.setState({...this.state, req: event.target.value});
+
+  }
+
+  // event handler for onSubmit event listener
+  handleSubmit(event) {
+
+    event.preventDefault();
+    this.setState({ ...this.state, results: true });
+
   }
 
   render() {
+
+    // let results = !this.state.results ? null :
+    //   <article>
+    //     <p>{this.state.req}</p>
+    //     <p>{this.state.url}</p>
+    //   </article>
+    console.log(this.state);
+
     return (
-      <form action={this.state.url} method={this.state.reqMethod}>
-        <input type="text" placeholder="Type your API URL here" value={this.state.url} onChange={this.handleChangeURL}></input>
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" name="url" placeholder="Type your API URL here" value={this.state.url} onChange={this.handleChangeURL}></input>
         <label>
-          GET:
-          <input type="radio" id="get" name="req" value="GET" onClick={this.handleChangeReqMethod}></input>
+          <input type="radio" id="get" name="req" value="GET" onClick={this.handleChangeReqMethod} />
+          <span>GET</span>
         </label>
         <label>
-          POST:
-          <input type="radio" id="post" name="req" value="POST" onClick={this.handleChangeReqMethod}></input>
+          <input type="radio" id="post" name="req" value="POST" onClick={this.handleChangeReqMethod} />
+          <span>POST</span>
         </label>
         <label>
-          PUT:
-          <input type="radio" id="put" name="req" value="PUT" onClick={this.handleChangeReqMethod}></input>
+          <input type="radio" id="put" name="req" value="PUT" onClick={this.handleChangeReqMethod} />
+          <span>PUT</span>
         </label>
         <label>
-          DELETE:
-          <input type="radio" id="delete" name="req" value="DELETE" onClick={this.handleChangeReqMethod}></input>
+          <input type="radio" id="delete" name="req" value="DELETE" onClick={this.handleChangeReqMethod} />
+          <span>DELETE</span>
         </label>
   
         <input type="submit" value="GO!"></input>
