@@ -14,7 +14,7 @@ class Form extends React.Component {
 
       req: '',
 
-      results: null,
+      results: [],
     };
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
@@ -45,7 +45,12 @@ class Form extends React.Component {
 
     event.preventDefault();
 
-    this.setState({...this.state, results: true })
+    let data = {
+      url: this.state.url,
+      req: this.state.req
+    };
+
+    this.setState({results: [...this.state.results, data] })
   }
 
   render() {
@@ -60,7 +65,6 @@ class Form extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-
         <div>
           <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
         </div><br />
@@ -94,8 +98,12 @@ class Form extends React.Component {
           <option value="DELETE">DELETE</option>
         </select> */}
         <input type="submit" value="GO!" />
-
       </form>
+      // <section>
+      //   {this.state.results.map(result => {
+      //   <p>{result.req} {result.url}</p>
+      // })}
+      // </section>
     )
   }
 }
