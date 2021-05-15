@@ -64,46 +64,46 @@ class Form extends React.Component {
     console.log(this.state);
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div>
-          <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
-        </div><br />
+      <>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
+          </div><br />
 
-        <label>
-          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="GET" required/>
-          <span>GET</span>
-        </label>
+          <label>
+            <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="GET" required/>
+            <span>GET</span>
+          </label>
 
-        <label>
-          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="POST" />
-          <span>POST</span>
-        </label>
+          <label>
+            <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="POST" />
+            <span>POST</span>
+          </label>
 
-        <label>
-          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="PUT" />
-          <span>PUT</span>
-        </label>
+          <label>
+            <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="PUT" />
+            <span>PUT</span>
+          </label>
 
-        <label>
-          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="DELETE" />
-          <span>DELETE</span>
-        </label><br /><br />
+          <label>
+            <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="DELETE" />
+            <span>DELETE</span>
+          </label><br /><br />
 
-        {/* <label htmlFor="methods">Please select a HTTP request method: </label> */}
-        {/* <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
-          <option value="DEFAULT" disabled selected hidden>Choose a method</option>
-          <option value="GET">GET</option>
-          <option value="POST">POST</option>
-          <option value="PUT">PUT</option>
-          <option value="DELETE">DELETE</option>
-        </select> */}
-        <input type="submit" value="GO!" />
-      </form>
-      // <section>
-      //   {this.state.results.map(result => {
-      //   <p>{result.req} {result.url}</p>
-      // })}
-      // </section>
+          {/* <label htmlFor="methods">Please select a HTTP request method: </label> */}
+          {/* <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
+            <option value="DEFAULT" disabled selected hidden>Choose a method</option>
+            <option value="GET">GET</option>
+            <option value="POST">POST</option>
+            <option value="PUT">PUT</option>
+            <option value="DELETE">DELETE</option>
+          </select> */}
+          <input type="submit" value="GO!" />
+        </form>
+        <section id="display">
+          {this.state.results.map((item, i) => <p key={i}>{item.req}, {item.url}</p>)}
+        </section>
+      </>
     )
   }
 }
