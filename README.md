@@ -38,7 +38,9 @@ created with [diagrams.net](https://www.diagrams.net/)
   - [W3schools - Form Attributes](https://www.w3schools.com/tags/tag_input.asp)
 - [ReactJS.org - Forms](https://reactjs.org/docs/forms.html)
 - [Jay Beale](https://github.com/jaybeale) helped me get started on wiring up the event handlers and using the `state` object
-- [Stack Overflow: Placeholder for dropdown selection](https://stackoverflow.com/questions/44786669/warning-use-the-defaultvalue-or-value-props-on-select-instead-of-setting)
+- [Stack Overflow - Placeholder for dropdown selection](https://stackoverflow.com/questions/44786669/warning-use-the-defaultvalue-or-value-props-on-select-instead-of-setting)
+- [W3docs - Requiring a radio button selection](https://www.w3docs.com/snippets/html/how-to-use-the-required-attribute-with-the-radio-input-field.html)
+- [Stack Overflow - Debugged React controlled radio buttons not being checked](https://stackoverflow.com/questions/42499495/react-controlled-radio-buttons-not-being-checked)
 
 ## Getting Started with Create React App
 
