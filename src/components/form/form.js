@@ -41,7 +41,7 @@ class Form extends React.Component {
   }
 
   // event handler for onSubmit event listener
-  async handleSubmit(event) {
+  handleSubmit(event) {
 
     event.preventDefault();
 
