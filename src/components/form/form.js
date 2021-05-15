@@ -41,11 +41,11 @@ class Form extends React.Component {
   }
 
   // event handler for onSubmit event listener
-  handleSubmit(event) {
+  async handleSubmit(event) {
 
     event.preventDefault();
-    this.setState({ ...this.state, results: true });
 
+    this.setState({...this.state, results: true })
   }
 
   render() {
@@ -55,29 +55,26 @@ class Form extends React.Component {
     //     <p>{this.state.req}</p>
     //     <p>{this.state.url}</p>
     //   </article>
+
     console.log(this.state);
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" name="url" placeholder="Type your API URL here" value={this.state.url} onChange={this.handleChangeURL}></input>
-        <label>
-          <input type="radio" id="get" name="req" value="GET" onClick={this.handleChangeReqMethod} />
-          <span>GET</span>
-        </label>
-        <label>
-          <input type="radio" id="post" name="req" value="POST" onClick={this.handleChangeReqMethod} />
-          <span>POST</span>
-        </label>
-        <label>
-          <input type="radio" id="put" name="req" value="PUT" onClick={this.handleChangeReqMethod} />
-          <span>PUT</span>
-        </label>
-        <label>
-          <input type="radio" id="delete" name="req" value="DELETE" onClick={this.handleChangeReqMethod} />
-          <span>DELETE</span>
-        </label>
-  
-        <input type="submit" value="GO!"></input>
+
+        <div>
+          <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
+        </div>
+
+        <label htmlFor="methods">Please select a HTTP request method: </label>
+        <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
+          <option value="DEFAULT" disabled selected hidden>Choose a method</option>
+          <option value="GET">GET</option>
+          <option value="POST">POST</option>
+          <option value="PUT">PUT</option>
+          <option value="DELETE">DELETE</option>
+        </select>
+        <button type="submit">GO!</button>
+
       </form>
     )
   }
