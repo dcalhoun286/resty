@@ -2,6 +2,8 @@
 
 This is an application built with React. The user can enter a URL (API) they wish to access, as well as select the `REST` method they want to use to access that URL.
 
+[Click here](https://codefellows.github.io/code-401-javascript-guide/curriculum/apps-and-libraries/resty/) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
+
 ## Author: Dar-Ci Calhoun
 
 ## Links
@@ -27,6 +29,24 @@ And as developers, here are the high level development tasks that address the ab
 - Create a form that asks for a URL
 - Create buttons that let the user choose from the REST methods (`GET`, `POST`, `PUT`, `DELETE`)
 - When the form is filled out, and the button is clicked, display the URL and the method chosen
+
+## RESTy - Phase 2 Requirements
+
+In Phase 2, we ill be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service `GET` requests.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to enter the URL to an API and issue a `GET` request so that I can retrieve its data
+- As a user, I want to see the results returned from an API request in my browser in a readable format
+
+Application Flow:
+
+- User enters an API URL
+- Chooses a REST method
+- Clicks the "Go" button
+- Application fetches data from the URL given, with the method specified
+- Displays the response headers and results separately
+- Both headers and results should be "pretty printed" in JSON
 
 ## UML
 
