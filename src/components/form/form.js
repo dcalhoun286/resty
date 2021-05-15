@@ -34,7 +34,7 @@ class Form extends React.Component {
   // event handler for onClick event listener
   handleChangeReqMethod(event) {
 
-    event.preventDefault();
+    // event.preventDefault();
     console.log('req method changed to: ', event.target.value);
     this.setState({...this.state, req: event.target.value});
 
@@ -63,17 +63,37 @@ class Form extends React.Component {
 
         <div>
           <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
-        </div>
+        </div><br />
 
-        <label htmlFor="methods">Please select a HTTP request method: </label>
-        <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
+        <label>
+          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="GET" required/>
+          <span>GET</span>
+        </label>
+
+        <label>
+          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="POST" />
+          <span>POST</span>
+        </label>
+
+        <label>
+          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="PUT" />
+          <span>PUT</span>
+        </label>
+
+        <label>
+          <input onClick={this.handleChangeReqMethod} type="radio" name="req" value="DELETE" />
+          <span>DELETE</span>
+        </label><br /><br />
+
+        {/* <label htmlFor="methods">Please select a HTTP request method: </label> */}
+        {/* <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
           <option value="DEFAULT" disabled selected hidden>Choose a method</option>
           <option value="GET">GET</option>
           <option value="POST">POST</option>
           <option value="PUT">PUT</option>
           <option value="DELETE">DELETE</option>
-        </select>
-        <button type="submit">GO!</button>
+        </select> */}
+        <input type="submit" value="GO!" />
 
       </form>
     )
