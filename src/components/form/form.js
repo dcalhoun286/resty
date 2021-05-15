@@ -43,20 +43,27 @@ class Form extends React.Component {
 
   // event handler for onSubmit event listener
   async handleSubmit(event) {
-
+    
     event.preventDefault();
 
-    let data = {
-      url: this.state.url,
-      req: this.state.req
-    };
+    try {
 
-    let results = await axios.get(data.url);
-    let resultsData = results.data;
+      let data = {
+        url: this.state.url,
+        req: this.state.req
+      };
+  
+      let results = await axios.get(data.url);
+      let resultsData = results.data;
+  
+      console.log('POKEMON DATA', resultsData);
+  
+      this.setState({results: [...this.state.results, data] });
 
-    console.log(resultsData);
+    } catch (err) {
+      console.error(err);
+    }
 
-    this.setState({results: [...this.state.results, data] })
   }
 
   render() {
