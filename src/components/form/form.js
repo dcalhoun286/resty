@@ -19,7 +19,7 @@ class Form extends React.Component {
 
       reqHeaders: {},
 
-      reqBody: []
+      reqBody: {}
     };
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
