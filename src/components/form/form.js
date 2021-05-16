@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import JSONPretty from 'react-json-pretty';
+
 import './form.scss';
 
 class Form extends React.Component {
@@ -15,7 +17,9 @@ class Form extends React.Component {
 
       req: '',
 
-      results: [],
+      reqHeaders: {},
+
+      reqBody: []
     };
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
@@ -53,12 +57,21 @@ class Form extends React.Component {
         req: this.state.req
       };
   
-      let results = await axios.get(data.url);
-      let resultsData = results.data;
+      let returned = await axios.get(data.url);
+      // let resultsData = returned.data;
+      let headersData = returned.headers;
+      let bodyData = returned.data;
+
+      console.log('HEADERS', headersData);
+      console.log('BODY', bodyData);
+      console.log('POKEMON DATA', returned);
   
-      console.log('POKEMON DATA', resultsData);
-  
-      this.setState({results: [...this.state.results, data] });
+      this.setState({
+        url: this.state.url,
+        req: this.state.req,
+        reqHeaders: headersData,
+        reqBody: bodyData
+      });
 
     } catch (err) {
       console.error(err);
@@ -74,7 +87,8 @@ class Form extends React.Component {
     //     <p>{this.state.url}</p>
     //   </article>
 
-    console.log(this.state);
+    console.log('these are the headers', this.state.reqHeaders);
+    console.log('this is the body', this.state.reqBody);
 
     return (
       <>
@@ -103,19 +117,16 @@ class Form extends React.Component {
             <span>DELETE</span>
           </label><br /><br />
 
-          {/* <label htmlFor="methods">Please select a HTTP request method: </label> */}
-          {/* <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
-            <option value="DEFAULT" disabled selected hidden>Choose a method</option>
-            <option value="GET">GET</option>
-            <option value="POST">POST</option>
-            <option value="PUT">PUT</option>
-            <option value="DELETE">DELETE</option>
-          </select> */}
           <input type="submit" value="GO!" />
         </form>
-        <section id="display">
-          {this.state.results.map((item, i) => <p key={i}>{item.req}, {item.url}</p>)}
-        </section>
+        <ul id="display">
+          <li>
+            <JSONPretty id="json-pretty" data={this.state.reqHeaders}></JSONPretty>
+          </li>
+          <li>
+            <JSONPretty id="json-pretty" data={this.state.reqBody}></JSONPretty>
+          </li>
+        </ul>
       </>
     )
   }
