@@ -64,6 +64,8 @@ created with [diagrams.net](https://www.diagrams.net/)
 - [W3docs - Requiring a radio button selection](https://www.w3docs.com/snippets/html/how-to-use-the-required-attribute-with-the-radio-input-field.html)
 - [Stack Overflow - Debugged React controlled radio buttons not being checked](https://stackoverflow.com/questions/42499495/react-controlled-radio-buttons-not-being-checked)
 - [Stack Overflow - Rendering an `array.map()` in React](https://stackoverflow.com/questions/38282997/rendering-an-array-map-in-react)
+- [Rendering JSON: React JSON Pretty](https://www.npmjs.com/package/react-json-pretty)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
