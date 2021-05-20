@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import JSONPretty from 'react-json-pretty';
 
 import './form.scss';
 
@@ -17,9 +15,9 @@ class Form extends React.Component {
 
       req: '',
 
-      reqHeaders: {},
+      // reqHeaders: {},
 
-      reqBody: {}
+      // reqBody: {}
     };
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
@@ -50,45 +48,11 @@ class Form extends React.Component {
     
     event.preventDefault();
 
-    try {
-
-      let data = {
-        url: this.state.url,
-        req: this.state.req
-      };
-  
-      let returned = await axios.get(data.url);
-      // let resultsData = returned.data;
-      let headersData = returned.headers;
-      let bodyData = returned.data;
-
-      console.log('HEADERS', headersData);
-      console.log('BODY', bodyData);
-      console.log('POKEMON DATA', returned);
-  
-      this.setState({
-        url: this.state.url,
-        req: this.state.req,
-        reqHeaders: headersData,
-        reqBody: bodyData
-      });
-
-    } catch (err) {
-      console.error(err);
-    }
+    this.props.handler(this.state);
 
   }
 
   render() {
-
-    // let results = !this.state.results ? null :
-    //   <article>
-    //     <p>{this.state.req}</p>
-    //     <p>{this.state.url}</p>
-    //   </article>
-
-    console.log('these are the headers', this.state.reqHeaders);
-    console.log('this is the body', this.state.reqBody);
 
     return (
       <>
@@ -119,14 +83,6 @@ class Form extends React.Component {
 
           <input type="submit" value="GO!" />
         </form>
-        <ul id="display">
-          <li>
-            <JSONPretty id="json-pretty" data={this.state.reqHeaders}></JSONPretty>
-          </li>
-          <li>
-            <JSONPretty id="json-pretty" data={this.state.reqBody}></JSONPretty>
-          </li>
-        </ul>
       </>
     )
   }
