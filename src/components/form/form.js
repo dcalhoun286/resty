@@ -11,9 +11,9 @@ class Form extends React.Component {
 
     this.state = {
 
-      url: '',
+      reqUrl: '',
 
-      req: '',
+      reqMethod: '',
 
       // reqHeaders: {},
 
@@ -29,8 +29,8 @@ class Form extends React.Component {
   handleChangeURL(event) {
 
     event.preventDefault();
-    console.log('URL event target value is ', event.target.value);
-    this.setState({...this.state, url: event.target.value});
+    // console.log('URL event target value is ', event.target.value);
+    this.setState({...this.state, reqUrl: event.target.value});
 
   }
 
@@ -38,8 +38,8 @@ class Form extends React.Component {
   handleChangeReqMethod(event) {
 
     // event.preventDefault();
-    console.log('req method changed to: ', event.target.value);
-    this.setState({...this.state, req: event.target.value});
+    // console.log('req method changed to: ', event.target.value);
+    this.setState({...this.state, reqMethod: event.target.value});
 
   }
 
@@ -58,7 +58,7 @@ class Form extends React.Component {
       <>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
+            <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.reqUrl} required/>
           </div><br />
 
           <label>

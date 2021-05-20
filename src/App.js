@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import Header from './components/header/header.js';
 import Form from './components/form/form.js';
-import Results from './components/results/results.js';
+import ResultsData from './components/results/results.js';
 import Footer from './components/footer/footer.js';
 
 class App extends React.Component {
@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      results: {}
+      resultsData: []
     }
 
     this.fetchData = this.fetchData.bind(this);
@@ -22,24 +22,24 @@ class App extends React.Component {
 
   async fetchData (formOptions) {
 
-    const response = await axios({
-      method: formOptions.req || 'get',
-      url: formOptions.url,
+    const axiosResponse = await axios({
+      method: formOptions.reqMethod || 'get',
+      url: formOptions.reqUrl,
     });
 
-    console.log('FORM OPTIONS', formOptions);
-    console.log('AXIOS RESPONSE', response);
+    // console.log('FORM OPTIONS', formOptions);
+    // console.log('AXIOS RESPONSE', response);
 
-    this.setState({...this.state, results: response});
+    this.setState({...this.state, resultsData: [axiosResponse]});
   }
 
   render() {
-    console.log('state of results', this.state);
+    // console.log('state of results', this.state);
     return (
       <>
         <Header />
         <Form handler={this.fetchData} />
-        <Results display={this.state.results}/>
+        <ResultsData display={this.state.resultsData}/>
         <Footer />
       </>
     );
