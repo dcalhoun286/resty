@@ -14,7 +14,10 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      resultsData: []
+      resultsData: {
+        h: {},
+        d: {}
+      }
     }
 
     this.fetchData = this.fetchData.bind(this);
@@ -27,14 +30,19 @@ class App extends React.Component {
       url: formOptions.reqUrl,
     });
 
-    // console.log('FORM OPTIONS', formOptions);
-    // console.log('AXIOS RESPONSE', response);
+    console.log('FORM OPTIONS', formOptions);
+    console.log('AXIOS RESPONSE', axiosResponse);
 
-    this.setState({...this.state, resultsData: [axiosResponse]});
+    let resultHeaders = axiosResponse.headers;
+    let resultResponse = axiosResponse.data;
+    this.setState({...this.state, resultsData: {
+      h: resultHeaders,
+      d: resultResponse
+    }});
   }
 
   render() {
-    // console.log('state of results', this.state);
+    console.log('state of results', this.state);
     return (
       <>
         <Header />
