@@ -1,24 +1,21 @@
 import React from 'react';
-import JSONPretty from 'react-json-pretty';
+import ReactJson from 'react-json-view';
+
+import './results.scss';
 
 class ResultsData extends React.Component {
 
   render() {
-
+    console.log('DISPLAY', this.props.display);
     let jsonItems = !this.props.display ? null : (
       <>
-        <ul id="display">
-          <li>
-            <JSONPretty id="json-pretty" data={
-              this.props.display.map( (item, idx) => <p data-testid={`item-${idx}`} key={idx}>{item.headers}</p>)
-            }></JSONPretty>
-          </li>
-          <li>
-            <JSONPretty id="json-pretty" data={
-              this.props.display.map( (item, idx) => <p data-testid={`item-${idx}`} key={idx}>{item.results}</p>)
-            }></JSONPretty>
-          </li>
-        </ul>
+        <section id="display">
+          <h2>Headers</h2>
+          <ReactJson id="json-pretty1" src={this.props.display.h}/>
+          <h2>Results</h2>
+          <ReactJson id="json-pretty2" src={this.props.display.d}/>
+        </section>
+
       </>
     )
 
