@@ -11,6 +11,7 @@ This is an application built with React. The user can enter a URL (API) they wis
 - [PR 1 - Phase 1](https://github.com/dcalhoun286/resty/pull/1)
 - [PR 2 - Phase 1](https://github.com/dcalhoun286/resty/pull/2)
 - [PR 3 - Phase 2](https://github.com/dcalhoun286/resty/pull/3)
+- [PR 4 - UML update for final iteration of RESTy](https://github.com/dcalhoun286/resty/pull/4)
 - [Deployed Link](https://codesandbox.io/s/cool-haze-6bvfz)
 
 ## RESTy - Phase 1 Requirements
