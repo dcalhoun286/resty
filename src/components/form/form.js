@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './form.scss';
 
 class Form extends React.Component {
@@ -10,11 +11,13 @@ class Form extends React.Component {
 
     this.state = {
 
-      url: '',
+      reqUrl: '',
 
-      req: '',
+      reqMethod: '',
 
-      results: [],
+      // reqHeaders: {},
+
+      // reqBody: {}
     };
 
     this.handleChangeURL = this.handleChangeURL.bind(this);
@@ -26,8 +29,8 @@ class Form extends React.Component {
   handleChangeURL(event) {
 
     event.preventDefault();
-    console.log('URL event target value is ', event.target.value);
-    this.setState({...this.state, url: event.target.value});
+    // console.log('URL event target value is ', event.target.value);
+    this.setState({...this.state, reqUrl: event.target.value});
 
   }
 
@@ -35,39 +38,27 @@ class Form extends React.Component {
   handleChangeReqMethod(event) {
 
     // event.preventDefault();
-    console.log('req method changed to: ', event.target.value);
-    this.setState({...this.state, req: event.target.value});
+    // console.log('req method changed to: ', event.target.value);
+    this.setState({...this.state, reqMethod: event.target.value});
 
   }
 
   // event handler for onSubmit event listener
-  handleSubmit(event) {
-
+  async handleSubmit(event) {
+    
     event.preventDefault();
 
-    let data = {
-      url: this.state.url,
-      req: this.state.req
-    };
+    this.props.handler(this.state);
 
-    this.setState({results: [...this.state.results, data] })
   }
 
   render() {
-
-    // let results = !this.state.results ? null :
-    //   <article>
-    //     <p>{this.state.req}</p>
-    //     <p>{this.state.url}</p>
-    //   </article>
-
-    console.log(this.state);
 
     return (
       <>
         <form onSubmit={this.handleSubmit}>
           <div>
-            <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.url} required/>
+            <input onChange={this.handleChangeURL} type="text" name="url" placeholder="Type your API URL here" value={this.state.reqUrl} required/>
           </div><br />
 
           <label>
@@ -90,19 +81,8 @@ class Form extends React.Component {
             <span>DELETE</span>
           </label><br /><br />
 
-          {/* <label htmlFor="methods">Please select a HTTP request method: </label> */}
-          {/* <select onChange={this.handleChangeReqMethod} name="methods" id="reqs" defaultValue="DEFAULT" required>
-            <option value="DEFAULT" disabled selected hidden>Choose a method</option>
-            <option value="GET">GET</option>
-            <option value="POST">POST</option>
-            <option value="PUT">PUT</option>
-            <option value="DELETE">DELETE</option>
-          </select> */}
           <input type="submit" value="GO!" />
         </form>
-        <section id="display">
-          {this.state.results.map((item, i) => <p key={i}>{item.req}, {item.url}</p>)}
-        </section>
       </>
     )
   }

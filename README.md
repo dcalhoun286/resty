@@ -2,12 +2,15 @@
 
 This is an application built with React. The user can enter a URL (API) they wish to access, as well as select the `REST` method they want to use to access that URL.
 
+[Click here](https://codefellows.github.io/code-401-javascript-guide/curriculum/apps-and-libraries/resty/) for a complete review of the application, including Business and Technical requirements along with the development roadmap.
+
 ## Author: Dar-Ci Calhoun
 
 ## Links
 
 - [PR 1 - Phase 1](https://github.com/dcalhoun286/resty/pull/1)
 - [PR 2 - Phase 1](https://github.com/dcalhoun286/resty/pull/2)
+- [PR 3 - Phase 2](https://github.com/dcalhoun286/resty/pull/3)
 - [Deployed Link](https://codesandbox.io/s/cool-haze-6bvfz)
 
 ## RESTy - Phase 1 Requirements
@@ -27,6 +30,24 @@ And as developers, here are the high level development tasks that address the ab
 - Create buttons that let the user choose from the REST methods (`GET`, `POST`, `PUT`, `DELETE`)
 - When the form is filled out, and the button is clicked, display the URL and the method chosen
 
+## RESTy - Phase 2 Requirements
+
+In Phase 2, we ill be connecting RESTy to live APIs, fetching and displaying remote data. Our primary focus will be to service `GET` requests.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to enter the URL to an API and issue a `GET` request so that I can retrieve its data
+- As a user, I want to see the results returned from an API request in my browser in a readable format
+
+Application Flow:
+
+- User enters an API URL
+- Chooses a REST method
+- Clicks the "Go" button
+- Application fetches data from the URL given, with the method specified
+- Displays the response headers and results separately
+- Both headers and results should be "pretty printed" in JSON
+
 ## UML
 
 created with [diagrams.net](https://www.diagrams.net/)
@@ -43,6 +64,8 @@ created with [diagrams.net](https://www.diagrams.net/)
 - [W3docs - Requiring a radio button selection](https://www.w3docs.com/snippets/html/how-to-use-the-required-attribute-with-the-radio-input-field.html)
 - [Stack Overflow - Debugged React controlled radio buttons not being checked](https://stackoverflow.com/questions/42499495/react-controlled-radio-buttons-not-being-checked)
 - [Stack Overflow - Rendering an `array.map()` in React](https://stackoverflow.com/questions/38282997/rendering-an-array-map-in-react)
+- [Rendering JSON: React JSON Pretty](https://www.npmjs.com/package/react-json-pretty)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
