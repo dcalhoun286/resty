@@ -11,6 +11,7 @@ This is an application built with React. The user can enter a URL (API) they wis
 - [PR 1 - Phase 1](https://github.com/dcalhoun286/resty/pull/1)
 - [PR 2 - Phase 1](https://github.com/dcalhoun286/resty/pull/2)
 - [PR 3 - Phase 2](https://github.com/dcalhoun286/resty/pull/3)
+- [PR 4 - UML update for final iteration of RESTy](https://github.com/dcalhoun286/resty/pull/4)
 - [Deployed Link](https://codesandbox.io/s/cool-haze-6bvfz)
 
 ## RESTy - Phase 1 Requirements
@@ -47,6 +48,26 @@ Application Flow:
 - Application fetches data from the URL given, with the method specified
 - Displays the response headers and results separately
 - Both headers and results should be "pretty printed" in JSON
+
+## RESTy - Phase 3 Requirements
+
+In this phase of the RESTy build, we will be adding some more fidelity to the application, including a menu, history, and an "in-progress" spinner.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to be able to use all REST methods so that I can do more than just **get** data
+- As a user, I want a simple list of all previous queries I've run so that I can easily see which queries I've run before
+- As a user, I want to click on an old query and have my selections appear in the form for me, so I don't have to re-type them
+- As a user, I want to see a "loading" indicator while RESTy is fetching data so that I know it's working on my request
+
+## RESTy - Phase 4 Requirements
+
+In this final phase of the RESTy build, we will be adding some more fidelity to the application, including a menu with a more detailed view of our history, as well as an about us page.
+
+The following user stories detail the major functionality for this phase of the project.
+
+- As a user, I want to see all of my previous queries as a separate page so that I can browse them in greater detail
+- As a user, I would like to view a separate "Help" page so I can learn how the application works
 
 ## UML
 
